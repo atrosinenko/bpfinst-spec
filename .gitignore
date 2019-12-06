@@ -1,0 +1,8 @@
+doxygen
+*.o
+*.so
+*.swp
+.gdb_history
+test-program
+real.out
+real.err

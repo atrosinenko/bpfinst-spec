@@ -1,0 +1,4 @@
+LOAD: value = 1001 size = 32
+STORE: value = 11011 size = 32
+LOAD: value = 2002 size = 64
+STORE: value = 102102 size = 64
