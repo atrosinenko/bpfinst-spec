@@ -1,0 +1,19 @@
+language: minimal
+os: linux
+dist: bionic
+
+addons:
+  apt:
+    packages:
+    - doxygen
+    - graphviz
+
+script:
+- doxygen Doxyfile
+
+deploy:
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true
+  local_dir: doxygen/html
+

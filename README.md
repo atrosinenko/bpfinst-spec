@@ -1,4 +1,4 @@
-# Specification for my eBPF-based instrumenters
+# Specification for my eBPF-based instrumenters [![Build Status](https://travis-ci.org/atrosinenko/bpfinst-spec.svg?branch=master)](https://travis-ci.org/atrosinenko/bpfinst-spec)
 
 This repository contains the specification for different implementations of eBPF-based instrumentation engines.
 
