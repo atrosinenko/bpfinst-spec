@@ -1,7 +1,0 @@
-<map id="Sqlite3Config" name="Sqlite3Config">
-<area shape="rect" id="node2" href="$structsqlite3__mem__methods.html" title="sqlite3_mem_methods" alt="" coords="5,95,176,121"/>
-<area shape="rect" id="node3" href="$structsqlite3__mutex.html" title="sqlite3_mutex" alt="" coords="225,5,340,32"/>
-<area shape="rect" id="node4" href="$structsqlite3__mutex__methods.html" title="sqlite3_mutex_methods" alt="" coords="321,95,500,121"/>
-<area shape="rect" id="node5" href="$structsqlite3__pcache__methods2.html" title="sqlite3_pcache_methods2" alt="" coords="525,95,715,121"/>
-<area shape="rect" id="node6" href="$structsqlite3__pcache__page.html" title="sqlite3_pcache_page" alt="" coords="541,5,699,32"/>
-</map>
