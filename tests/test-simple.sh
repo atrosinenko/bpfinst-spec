@@ -8,11 +8,12 @@ run_test() {
 	cd $1
 
     # Remove old artifacts
-	rm -f inst-bpf.o inst-native.so test-program
+	rm -f *.o *.bc *.so test-program
 
 	# Compile instrumenter
-	clang -O3 -Wall -Werror -funroll-loops -emit-llvm -c inst-bpf.c -I../../include -o - | llc -march=bpf -filetype=obj -o inst-bpf.o
-	clang -O3 -Wall -Werror -ggdb3 inst-native.c -o inst-native.so -fPIC --shared -I../../include
+	clang -O3 -ggdb3 -Wall -Werror -funroll-loops -emit-llvm -c inst-bpf.c -I../../include
+	llc -march=bpf -filetype=obj -o inst-bpf.o inst-bpf.bc
+	clang -O3 -ggdb3 -Wall -Werror inst-native.c -o inst-native.so -fPIC --shared -I../../include
 	export BPF_INST=$(pwd)/inst-bpf.o
 	export NATIVE_INST=$(pwd)/inst-native.so
 

@@ -1,5 +1,6 @@
 doxygen
 *.o
+*.bc
 *.so
 *.swp
 .gdb_history
