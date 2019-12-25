@@ -1,4 +1,6 @@
-# Specification for my eBPF-based instrumenters [![Build Status](https://travis-ci.org/atrosinenko/bpfinst-spec.svg?branch=master)](https://travis-ci.org/atrosinenko/bpfinst-spec)
+# Specification for my eBPF-based instrumenters 
+
+[![Build Status](https://travis-ci.org/atrosinenko/bpfinst-spec.svg?branch=master)](https://travis-ci.org/atrosinenko/bpfinst-spec)
 
 This repository contains the specification for different implementations of eBPF-based instrumentation engines.
 
@@ -6,11 +8,11 @@ This repository contains the specification for different implementations of eBPF
 
 ## Implementations
 
-* QEMU-based: [QInst](https://github.com/atrosinenko/qinst) **(update is pending)**
+* QEMU-based: [QInst](https://github.com/atrosinenko/qinst) ***(update is pending)***
   * dynamic binary instrumentation
   * handles user-mode executables (including foreign hardware architectures)
   * supports tag propagation
-* RISC-V soft-processor based: [SimpleInst](https://github.com/atrosinenko/simpleinst) **(update is pending)**
+* RISC-V soft-processor based: [SimpleInst](https://github.com/atrosinenko/simpleinst) ***(update is pending)***
   * instrumentation is statically built into an instance of RocketChip soft-processor during Verilog generation
 * LLVM-based: [LLInst](https://github.com/atrosinenko/llinst)
   * static white-box instrumentation
