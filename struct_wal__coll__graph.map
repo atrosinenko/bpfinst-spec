@@ -1,0 +1,6 @@
+<map id="Wal" name="Wal">
+<area shape="rect" id="node2" href="$structsqlite3__file.html" title="sqlite3_file" alt="" coords="33,95,127,121"/>
+<area shape="rect" id="node3" href="$structsqlite3__io__methods.html" title="sqlite3_io_methods" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node4" href="$structsqlite3__vfs.html" title="sqlite3_vfs" alt="" coords="151,95,244,121"/>
+<area shape="rect" id="node5" href="$struct_wal_index_hdr.html" title="WalIndexHdr" alt="" coords="337,95,442,121"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="include/bpfinst/common.h" name="include/bpfinst/common.h">
+<area shape="rect" id="node2" href="$bpf_8h.html" title="API of the eBPF&#45;side of the instrumenter. " alt="" coords="994,80,1147,107"/>
+<area shape="rect" id="node13" href="$native_8h.html" title="API of the native side of the instrumenter. " alt="" coords="2678,80,2853,107"/>
+<area shape="rect" id="node3" href="$simple-afl-like_2inst-bpf_8c.html" title="tests/simple&#45;afl&#45;like\l/inst&#45;bpf.c" alt="" coords="5,155,157,196"/>
+<area shape="rect" id="node4" href="$simple-callback_2inst-bpf_8c.html" title="tests/simple&#45;callback\l/inst&#45;bpf.c" alt="" coords="182,155,343,196"/>
+<area shape="rect" id="node5" href="$simple-ebpf-computation_2inst-bpf_8c.html" title="tests/simple&#45;ebpf&#45;computation\l/inst&#45;bpf.c" alt="" coords="367,155,590,196"/>
+<area shape="rect" id="node6" href="$simple-functions_2inst-bpf_8c.html" title="tests/simple&#45;functions\l/inst&#45;bpf.c" alt="" coords="614,155,781,196"/>
+<area shape="rect" id="node7" href="$simple-ldst_2inst-bpf_8c.html" title="tests/simple&#45;ldst/inst\l&#45;bpf.c" alt="" coords="805,155,963,196"/>
+<area shape="rect" id="node8" href="$simple-misc-inst_2inst-bpf_8c.html" title="tests/simple&#45;misc&#45;inst\l/inst&#45;bpf.c" alt="" coords="987,155,1154,196"/>
+<area shape="rect" id="node9" href="$simple-sqlite-tag_2inst-bpf_8c.html" title="tests/simple&#45;sqlite\l&#45;tag/inst&#45;bpf.c" alt="" coords="1178,155,1321,196"/>
+<area shape="rect" id="node10" href="$simple-syscall_2inst-bpf_8c.html" title="tests/simple&#45;syscall\l/inst&#45;bpf.c" alt="" coords="1345,155,1497,196"/>
+<area shape="rect" id="node11" href="$simple-tag-set-get_2inst-bpf_8c.html" title="tests/simple&#45;tag&#45;set\l&#45;get/inst&#45;bpf.c" alt="" coords="1522,155,1675,196"/>
+<area shape="rect" id="node12" href="$simple-tag-taint_2inst-bpf_8c.html" title="tests/simple&#45;tag&#45;taint\l/inst&#45;bpf.c" alt="" coords="1700,155,1863,196"/>
+<area shape="rect" id="node14" href="$simple-afl-like_2inst-native_8c.html" title="tests/simple&#45;afl&#45;like\l/inst&#45;native.c" alt="" coords="1887,155,2039,196"/>
+<area shape="rect" id="node15" href="$simple-callback_2inst-native_8c.html" title="tests/simple&#45;callback\l/inst&#45;native.c" alt="" coords="2063,155,2225,196"/>
+<area shape="rect" id="node16" href="$simple-ebpf-computation_2inst-native_8c.html" title="tests/simple&#45;ebpf&#45;computation\l/inst&#45;native.c" alt="" coords="2249,155,2471,196"/>
+<area shape="rect" id="node17" href="$simple-functions_2inst-native_8c.html" title="tests/simple&#45;functions\l/inst&#45;native.c" alt="" coords="2495,155,2662,196"/>
+<area shape="rect" id="node18" href="$simple-ldst_2inst-native_8c.html" title="tests/simple&#45;ldst/inst\l&#45;native.c" alt="" coords="2686,155,2845,196"/>
+<area shape="rect" id="node19" href="$simple-misc-inst_2inst-native_8c.html" title="tests/simple&#45;misc&#45;inst\l/inst&#45;native.c" alt="" coords="2869,155,3035,196"/>
+<area shape="rect" id="node20" href="$simple-sqlite-tag_2inst-native_8c.html" title="tests/simple&#45;sqlite\l&#45;tag/inst&#45;native.c" alt="" coords="3059,155,3202,196"/>
+<area shape="rect" id="node21" href="$simple-syscall_2inst-native_8c.html" title="tests/simple&#45;syscall\l/inst&#45;native.c" alt="" coords="3227,155,3379,196"/>
+<area shape="rect" id="node22" href="$simple-tag-set-get_2inst-native_8c.html" title="tests/simple&#45;tag&#45;set\l&#45;get/inst&#45;native.c" alt="" coords="3403,155,3557,196"/>
+<area shape="rect" id="node23" href="$simple-tag-taint_2inst-native_8c.html" title="tests/simple&#45;tag&#45;taint\l/inst&#45;native.c" alt="" coords="3581,155,3744,196"/>
+</map>
