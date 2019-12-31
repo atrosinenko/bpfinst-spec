@@ -4,11 +4,17 @@ bindir="$(dirname $0)/../../bpfinst-bin/"
 bindir="$(realpath $bindir)"
 
 run_test() {
-	oldcwd=$(pwd)
-	cd $1
-
-    # Remove old artifacts
+	# Remove old artifacts
 	rm -f *.o *.bc *.so test-program
+
+	# Test for compatibility with toolchain, etc.
+	if [ -x ./skip_if ] && ./skip_if
+	then
+		echo "======================"
+		echo "WARNING: SKIPPING TEST"
+		echo "======================"
+		return
+	fi
 
 	# Compile instrumenter
 	clang -O3 -ggdb3 -Wall -Werror -funroll-loops -emit-llvm -c inst-bpf.c -I../../include
@@ -25,13 +31,15 @@ run_test() {
 	    $bindir/run-binary ./test-program < $input 2> real.err || echo "Run failed"
 	    diff $(basename $input .in).err real.err
 	done
-	cd "$oldcwd"
 }
 
 for x in $*
 do
-    echo "==== Testing $x... ===="
-    run_test $x
+	echo "==== Testing $x... ===="
+	oldcwd=$(pwd)
+	cd $x
+	run_test
+	cd "$oldcwd"
 	echo "==== Done: $x ===="
 done
 

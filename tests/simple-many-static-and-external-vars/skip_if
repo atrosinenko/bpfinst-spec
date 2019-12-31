@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+# Clang 7 cannot compile this instrumenter
+
+clang --version | grep -q "RELEASE_[1-7]"
