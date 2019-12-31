@@ -5,5 +5,6 @@ test-simple:
 
 clean:
 	rm -f simple-*/*.o
+	rm -f simple-*/*.bc
 	rm -f simple-*/*.so
 	rm -f simple-*/test-program
