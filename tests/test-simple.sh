@@ -3,6 +3,14 @@
 bindir="$(dirname $0)/../../bpfinst-bin/"
 bindir="$(realpath $bindir)"
 
+if [ ! -d $bindir ]
+then
+	echo
+	echo "WARNING: $bindir not found, assuming spec self-check"
+	echo
+	notest=1
+fi
+
 run_test() {
 	# Remove old artifacts
 	rm -f *.o *.bc *.so test-program
@@ -23,6 +31,10 @@ run_test() {
 	export BPF_INST=$(pwd)/inst-bpf.o
 	export NATIVE_INST=$(pwd)/inst-native.so
 
+	if [ "x$notest" = "x1" ]
+	then
+		return
+	fi
 	$bindir/prepare-for-test
 	$bindir/compile-sources make test-program
 	for input in *.in

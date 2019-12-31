@@ -7,9 +7,11 @@ addons:
     packages:
     - doxygen
     - graphviz
+    - clang
 
 script:
 - doxygen Doxyfile
+- make -C tests
 
 deploy:
   provider: pages:git
