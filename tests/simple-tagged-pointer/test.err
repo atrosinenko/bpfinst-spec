@@ -1,0 +1,6 @@
+SET TAG: 321
+SET TAG: 1
+SET TAG: 2
+Indices: 321 1 2
+Offset is 30864.
+LOAD: value = 1001 tag = 30864
