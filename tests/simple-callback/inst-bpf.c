@@ -1,6 +1,12 @@
-#include <bpfinst/bpf.h>
+#define EBPF
+#include "../lib/trivial-test.h"
 
-void inst_sub(uint64_t a, uint64_t b) {\
-  uint32_t t = slow_call(a);
-  slow_call(b + t);
-}
+BEGIN_EBPF_HANDLER
+  BEGIN_INPUTS
+  EXPECT_INPUT(100, 11)
+  END_INPUTS
+
+  uint32_t t = slow_call(arg1);
+  slow_call(arg2 + t);
+
+END_EBPF_HANDLER

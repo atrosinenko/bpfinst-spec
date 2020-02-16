@@ -1,10 +1,17 @@
-#include <bpfinst/bpf.h>
+#define EBPF
+#include "../lib/trivial-test.h"
 
-void inst_sub(uint64_t a, uint64_t b)
-{
+BEGIN_EBPF_HANDLER
+  BEGIN_INPUTS
+  EXPECT_INPUT(127, 257)
+  EXPECT_INPUT(20, 19)
+  EXPECT_INPUT(129, 257)
+  EXPECT_INPUT(1000000000001LLu, 2)
+  END_INPUTS
+
   // expands into quite large listing
-  uint64_t pa = __builtin_popcountll(a);
-  uint64_t pb = __builtin_popcountll(b);
+  uint64_t pa = __builtin_popcountll(arg1);
+  uint64_t pb = __builtin_popcountll(arg2);
 
   slow_call(pa);
   slow_call(pb);
@@ -16,4 +23,5 @@ void inst_sub(uint64_t a, uint64_t b)
     slow_call(-1);
   else
     slow_call(pb);
-}
+
+END_EBPF_HANDLER

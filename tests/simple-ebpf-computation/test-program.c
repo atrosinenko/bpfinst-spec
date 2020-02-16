@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
+#define PROGRAM
+#include "../lib/trivial-test.h"
 
-volatile long long x,  y, z;
-
-int main(int argc, const char *argv[])
-{
-  scanf("%lld %lld", &x, &y);
-
-  z = x - y;
-
-  return 0;
-}
+TEST_FOR_TYPE(long long, "%lld")

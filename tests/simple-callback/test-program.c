@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
+#define PROGRAM
+#include "../lib/trivial-test.h"
 
-volatile int x,  y;
-
-int main(int argc, const char *argv[])
-{
-  scanf("%d", &x);
-  y = x - 11;
-  return 0;
-}
+TEST_FOR_TYPE(int, "%d")
