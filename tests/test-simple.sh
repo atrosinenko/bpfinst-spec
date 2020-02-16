@@ -3,6 +3,9 @@
 bindir="$(dirname $0)/../../bpfinst-bin/"
 bindir="$(realpath $bindir)"
 
+passed=""
+failed=""
+
 if [ ! -d $bindir ]
 then
 	echo
@@ -12,6 +15,9 @@ then
 fi
 
 run_test() {
+	local_fails=""
+	test_name=$1
+
 	# Remove old artifacts
 	rm -f *.o *.bc *.so test-program
 
@@ -41,8 +47,14 @@ run_test() {
 	do
 	    echo "---> Validating $input"
 	    $bindir/run-binary ./test-program < $input 2> real.err || echo "Run failed"
-	    diff $(basename $input .in).err real.err
+	    diff $(basename $input .in).err real.err || local_fails="$local_fails $input"
 	done
+	if [ -n "$local_fails" ]
+	then
+		failed="$failed\n$test_name: $local_fails"
+	else
+		passed="$passed $test_name"
+	fi
 }
 
 for x in $*
@@ -50,9 +62,22 @@ do
 	echo "==== Testing $x... ===="
 	oldcwd=$(pwd)
 	cd $x
-	run_test
+	run_test $x
 	cd "$oldcwd"
 	echo "==== Done: $x ===="
 done
 
-echo "OK"
+if [ -n "$passed" ]
+then
+	echo "\nPassed tests:$passed"
+fi
+
+if [ -n "$failed" ]
+then
+	echo
+	echo " ==> FAILED <==\n$failed"
+	exit 1
+else
+	echo "OK"
+fi
+
