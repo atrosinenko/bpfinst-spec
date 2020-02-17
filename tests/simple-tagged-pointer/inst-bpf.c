@@ -4,12 +4,12 @@
 
 static uint64_t value_addr, tag_addr;
 
-void inst_load(uint64_t addr)
+void inst_load(uint64_t addr, int64_t offset)
 {
-  ptr = addr;
+  ptr = addr + offset;
   ptr_tag = tag1();
 
-  if (addr == value_addr) {
+  if (addr + offset == value_addr) {
     set_tag(*(uint64_t*)tag_addr);
     slow_call(3);
   } else {
@@ -17,19 +17,19 @@ void inst_load(uint64_t addr)
   }
 }
 
-void inst_store(uint64_t addr, uint64_t stored_value)
+void inst_store(uint64_t addr, int64_t offset, uint64_t stored_value)
 {
-  ptr = addr;
+  ptr = addr + offset;
   ptr_tag = tag1();
   value = stored_value;
-  tag = tag2();
+  tag = tag3();
 
   slow_call(2);
 
   if (stored_value == 100501)
-    value_addr = addr;
+    value_addr = addr + offset;
   if (stored_value == 100502)
-    tag_addr = addr;
+    tag_addr = addr + offset;
 }
 
 // arr_ptr + idx1 * sizeof(...) + idx2 * sizeof(...) + idx3 * sizeof(uint64_t)

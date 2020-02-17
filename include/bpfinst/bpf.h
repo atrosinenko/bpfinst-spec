@@ -68,6 +68,11 @@ uint64_t bit_width1(void);
 uint64_t bit_width2(void);
 
 /**
+ * @brief Get width in bits of the third operand of instruction being instrumented
+ */
+uint64_t bit_width3(void);
+
+/**
  * @brief Get the tag associated with the first operand
  */
 uint64_t tag1(void);
@@ -76,6 +81,11 @@ uint64_t tag1(void);
  * @brief Get the tag associated with the second operand
  */
 uint64_t tag2(void);
+
+/**
+ * @brief Get the tag associated with the third operand
+ */
+uint64_t tag3(void);
 
 
 /// @}
@@ -223,18 +233,18 @@ void inst_zext(uint64_t a);
 void inst_sext(uint64_t a);
 
 /**
- * @brief Instrumenter for x = *addr
+ * @brief Instrumenter for x = *(addr + offset)
  *
  * @see bit_width()
  */
-void inst_load(uint64_t addr);
+void inst_load(uint64_t addr, int64_t offset);
 
 /**
- * @brief Instrumenter for *addr = value
+ * @brief Instrumenter for *(addr + offset) = value
  *
  * @see bit_width()
  */
-void inst_store(uint64_t addr, uint64_t value);
+void inst_store(uint64_t addr, int64_t offset, uint64_t value);
 
 /// @}
 

@@ -51,5 +51,20 @@ TEST_UN(trunc)
 TEST_UN(zext)
 TEST_UN(sext)
 
-TEST_UN(load)
-TEST_BIN(store)
+void inst_load(uint64_t addr, int64_t offset)
+{
+  uint64_t a = addr + offset;
+  arg1 = a | tag1();
+  slow_call(0);
+  set_tag(arg1);
+}
+
+void inst_store(uint64_t addr, int64_t offset, uint64_t value)
+{
+  uint64_t a = addr + offset;
+  uint64_t b = value;
+  arg1 = a | tag1();
+  arg2 = b | tag3();
+  slow_call(0);
+  set_tag(arg1 | arg2);
+}

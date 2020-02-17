@@ -59,16 +59,16 @@ void inst_ctz(uint64_t a, uint64_t if0)
   }
 }
 
-void inst_load(uint64_t addr)
+void inst_load(uint64_t addr, int64_t offset)
 {
-  if (slow_call(-addr)) {
+  if (slow_call(-(addr + offset))) {
     set_tag(1);
   }
 }
 
-void inst_store(uint64_t addr, uint64_t value)
+void inst_store(uint64_t addr, int64_t offset, uint64_t value)
 {
-  if (tag2()) {
-    slow_call(addr);
+  if (tag3()) {
+    slow_call(addr + offset);
   }
 }
