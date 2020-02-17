@@ -125,12 +125,12 @@ Functions</h2></td></tr>
 <tr class="separator:ga0466dc5ceb68299aacd40cd9684a4d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb858ca98ad728999f8afb907e1f9993"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__instrumenter-bpf.html#gafb858ca98ad728999f8afb907e1f9993">inst_sext</a> (uint64_t a)</td></tr>
 <tr class="separator:gafb858ca98ad728999f8afb907e1f9993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa55232ec0ce3ba3b192248a7525aa25a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__instrumenter-bpf.html#gaa55232ec0ce3ba3b192248a7525aa25a">inst_load</a> (uint64_t addr)</td></tr>
-<tr class="memdesc:gaa55232ec0ce3ba3b192248a7525aa25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instrumenter for x = *addr.  <a href="#gaa55232ec0ce3ba3b192248a7525aa25a">More...</a><br /></td></tr>
-<tr class="separator:gaa55232ec0ce3ba3b192248a7525aa25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7419459d766f901cb1435042e78589b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__instrumenter-bpf.html#ga7419459d766f901cb1435042e78589b2">inst_store</a> (uint64_t addr, uint64_t value)</td></tr>
-<tr class="memdesc:ga7419459d766f901cb1435042e78589b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instrumenter for *addr = value.  <a href="#ga7419459d766f901cb1435042e78589b2">More...</a><br /></td></tr>
-<tr class="separator:ga7419459d766f901cb1435042e78589b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee39b42eb6ccacbdbdee8b819aa55722"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__instrumenter-bpf.html#gaee39b42eb6ccacbdbdee8b819aa55722">inst_load</a> (uint64_t addr, int64_t offset)</td></tr>
+<tr class="memdesc:gaee39b42eb6ccacbdbdee8b819aa55722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instrumenter for x = *(addr + offset)  <a href="#gaee39b42eb6ccacbdbdee8b819aa55722">More...</a><br /></td></tr>
+<tr class="separator:gaee39b42eb6ccacbdbdee8b819aa55722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad896bb9e1b9e7acfc83074a9065d13d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__instrumenter-bpf.html#gad896bb9e1b9e7acfc83074a9065d13d5">inst_store</a> (uint64_t addr, int64_t offset, uint64_t value)</td></tr>
+<tr class="memdesc:gad896bb9e1b9e7acfc83074a9065d13d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instrumenter for *(addr + offset) = value.  <a href="#gad896bb9e1b9e7acfc83074a9065d13d5">More...</a><br /></td></tr>
+<tr class="separator:gad896bb9e1b9e7acfc83074a9065d13d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -378,8 +378,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa55232ec0ce3ba3b192248a7525aa25a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa55232ec0ce3ba3b192248a7525aa25a">&#9670;&nbsp;</a></span>inst_load()</h2>
+<a id="gaee39b42eb6ccacbdbdee8b819aa55722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee39b42eb6ccacbdbdee8b819aa55722">&#9670;&nbsp;</a></span>inst_load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,13 +388,23 @@ Functions</h2></td></tr>
           <td class="memname">void inst_load </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Instrumenter for x = *addr. </p>
+<p>Instrumenter for x = *(addr + offset) </p>
 <dl class="section see"><dt>See also</dt><dd>bit_width() </dd></dl>
 
 </div>
@@ -760,8 +770,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga7419459d766f901cb1435042e78589b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7419459d766f901cb1435042e78589b2">&#9670;&nbsp;</a></span>inst_store()</h2>
+<a id="gad896bb9e1b9e7acfc83074a9065d13d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad896bb9e1b9e7acfc83074a9065d13d5">&#9670;&nbsp;</a></span>inst_store()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -771,6 +781,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -786,7 +802,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Instrumenter for *addr = value. </p>
+<p>Instrumenter for *(addr + offset) = value. </p>
 <dl class="section see"><dt>See also</dt><dd>bit_width() </dd></dl>
 
 </div>
