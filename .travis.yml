@@ -18,4 +18,6 @@ deploy:
   token: $GITHUB_TOKEN
   edge: true
   local_dir: doxygen/html
+  on:
+    branch: master
 
