@@ -10,6 +10,9 @@
  * * 1 -- true if equal
  * * 2 -- true if left < right
  * * 4 -- true if left > right
+ * * 8 -- signed
+ *
+ * @note All values in the range 0-15 are permitted.
  */
 typedef enum {
   COND_NEVER = 0,  ///< 000 -- Never
@@ -20,6 +23,10 @@ typedef enum {
   COND_GE = 5,     ///< 101 -- a >= b
   COND_NEQ = 6,    ///< 110 -- a != b
   COND_ALWAYS = 7, ///< 111 -- Always
+
+  COND_SIGNED = 8, ///< 1000 -- A mask signifying the comparison is signed
+                   ///  COND_SIGNED variants are constructed like `COND_SIGNED | COND_GT`
+  // TODO implement test for signed/unsigned
 } condition_op_t;
 
 /// Result of comparison if operands are equal
@@ -28,5 +35,7 @@ typedef enum {
 #define COND_IF_LT(x) (!!((x) & 2))
 /// Result of comparison if first operand is greater than the second one
 #define COND_IF_GT(x) (!!((x) & 4))
+/// Whether this comparison is signed
+#define COND_IS_SIGNED(x) (!!((x) & COND_SIGNED))
 
 #endif // BPFINST_COMMON_H
