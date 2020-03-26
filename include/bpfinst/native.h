@@ -16,16 +16,18 @@
 /// @{
 
 /**
- * @brief Translates host address (as seen by instrumenter) to guest virtual address.
+ * @brief Translates guest address to host address (as seen by instrumenter).
+ *
+ * @note To be used by user space instrumenters.
  */
-uint64_t host_to_virtual_addrress(uint64_t address);
+uint64_t guest_to_host_addrress(uint64_t address);
 
 /**
- * @brief Translates host address (as seen by instrumenter) to guest physical address.
+ * @brief Translates physical address to host address (as seen by instrumenter).
  *
- * @note If used for user-space instrumentation, the same as host_to_virtual_addrress().
+ * @note To be used by full-system instrumenters.
  */
-uint64_t host_to_physical_addrress(uint64_t address);
+uint64_t physical_to_host_addrress(uint64_t address);
 
 /// @}
 
