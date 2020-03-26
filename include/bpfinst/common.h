@@ -24,7 +24,7 @@ typedef enum {
   COND_NEQ = 6,    ///< 110 -- a != b
   COND_ALWAYS = 7, ///< 111 -- Always
 
-  COND_SIGNED = 8, ///< 1000 -- A mask signifying the comparison is signed
+  COND_SIGNED = 8, ///< 1000 -- A mask signifying the comparison is signed <br/>
                    ///  COND_SIGNED variants are constructed like `COND_SIGNED | COND_GT`
   // TODO implement test for signed/unsigned
 } condition_op_t;
