@@ -47,23 +47,23 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaca8a6640c1713d91dd03285d6ea6d7a7"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__engine-native.html#gaca8a6640c1713d91dd03285d6ea6d7a7">host_to_virtual_addrress</a> (uint64_t address)</td></tr>
-<tr class="memdesc:gaca8a6640c1713d91dd03285d6ea6d7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates host address (as seen by instrumenter) to guest virtual address.  <a href="#gaca8a6640c1713d91dd03285d6ea6d7a7">More...</a><br /></td></tr>
-<tr class="separator:gaca8a6640c1713d91dd03285d6ea6d7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga273e46fe788f3ddff4fb550ce22a2c7e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__engine-native.html#ga273e46fe788f3ddff4fb550ce22a2c7e">host_to_physical_addrress</a> (uint64_t address)</td></tr>
-<tr class="memdesc:ga273e46fe788f3ddff4fb550ce22a2c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates host address (as seen by instrumenter) to guest physical address.  <a href="#ga273e46fe788f3ddff4fb550ce22a2c7e">More...</a><br /></td></tr>
-<tr class="separator:ga273e46fe788f3ddff4fb550ce22a2c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga410fca8b6a1daacd1dcac9d7204f89ad"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__engine-native.html#ga410fca8b6a1daacd1dcac9d7204f89ad">guest_to_host_addrress</a> (uint64_t address)</td></tr>
+<tr class="memdesc:ga410fca8b6a1daacd1dcac9d7204f89ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates guest address to host address (as seen by instrumenter).  <a href="#ga410fca8b6a1daacd1dcac9d7204f89ad">More...</a><br /></td></tr>
+<tr class="separator:ga410fca8b6a1daacd1dcac9d7204f89ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga974659c71510c8c780c53964c4e98a74"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__engine-native.html#ga974659c71510c8c780c53964c4e98a74">physical_to_host_addrress</a> (uint64_t address)</td></tr>
+<tr class="memdesc:ga974659c71510c8c780c53964c4e98a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates physical address to host address (as seen by instrumenter).  <a href="#ga974659c71510c8c780c53964c4e98a74">More...</a><br /></td></tr>
+<tr class="separator:ga974659c71510c8c780c53964c4e98a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga273e46fe788f3ddff4fb550ce22a2c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga273e46fe788f3ddff4fb550ce22a2c7e">&#9670;&nbsp;</a></span>host_to_physical_addrress()</h2>
+<a id="ga410fca8b6a1daacd1dcac9d7204f89ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga410fca8b6a1daacd1dcac9d7204f89ad">&#9670;&nbsp;</a></span>guest_to_host_addrress()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint64_t host_to_physical_addrress </td>
+          <td class="memname">uint64_t guest_to_host_addrress </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>address</em></td><td>)</td>
@@ -72,19 +72,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Translates host address (as seen by instrumenter) to guest physical address. </p>
-<dl class="section note"><dt>Note</dt><dd>If used for user-space instrumentation, the same as <a class="el" href="group__engine-native.html#gaca8a6640c1713d91dd03285d6ea6d7a7" title="Translates host address (as seen by instrumenter) to guest virtual address. ">host_to_virtual_addrress()</a>. </dd></dl>
+<p>Translates guest address to host address (as seen by instrumenter). </p>
+<dl class="section note"><dt>Note</dt><dd>To be used by user space instrumenters. </dd></dl>
 
 </div>
 </div>
-<a id="gaca8a6640c1713d91dd03285d6ea6d7a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaca8a6640c1713d91dd03285d6ea6d7a7">&#9670;&nbsp;</a></span>host_to_virtual_addrress()</h2>
+<a id="ga974659c71510c8c780c53964c4e98a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga974659c71510c8c780c53964c4e98a74">&#9670;&nbsp;</a></span>physical_to_host_addrress()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint64_t host_to_virtual_addrress </td>
+          <td class="memname">uint64_t physical_to_host_addrress </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>address</em></td><td>)</td>
@@ -93,7 +93,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Translates host address (as seen by instrumenter) to guest virtual address. </p>
+<p>Translates physical address to host address (as seen by instrumenter). </p>
+<dl class="section note"><dt>Note</dt><dd>To be used by full-system instrumenters. </dd></dl>
 
 </div>
 </div>
